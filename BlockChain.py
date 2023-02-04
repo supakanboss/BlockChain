@@ -13,37 +13,38 @@ class Blockchain:
 
     def display_all_chain(self):
         for i, block in enumerate(self.chain):
-            print("*************************************************")
-            print(f"Block : {i}")
-            print(f"Hash : {block.hash}")
-            print(f"Previous Hash : {block.previous_hash}")
-            print(f"TimeStamp : {block.TimeStamp}")
-            print(f"Property Owner : {block.datas[0]}")
-            print(f"Tel : {block.datas[1]}")
-            print(f"Address : {block.datas[2]}")
-            print(f"Title Deed : {block.datas[3]}")
-            print(f"Area : {block.datas[4]}")
-            print(f"Unit : {block.datas[5]}")
-            print(f"Permis de construire : {block.datas[6]}")
-            print(f"EIA : {block.datas[7]}")
-            
+            print("{")
+            print(f"    Block : {i},")
+            print(f"    Hash : {block.hash},")
+            print(f"    Previous Hash : {block.previous_hash},")
+            print(f"    TimeStamp : {block.TimeStamp},")
+            print(f"    Property Owner : {block.datas[0]},")
+            print(f"    Tel : {block.datas[1]},")
+            print(f"    Address : {block.datas[2]},")
+            print(f"    Title Deed : {block.datas[3]},")
+            print(f"    Area : {block.datas[4]},")
+            print(f"    Unit : {block.datas[5]},")
+            print(f"    Permis de construire : {block.datas[6]},")
+            print(f"    EIA : {block.datas[7]}")
+            print("}")
+
     def display_chain(self, block_number):
         block = self.chain[block_number]
-        print("*************************************************")
-        print(f"Block : {block_number}")
-        print(f"Hash : {block.hash}")
-        print(f"Previous Hash : {block.previous_hash}")
-        print(f"TimeStamp : {block.TimeStamp}")
-        print(f"Property Owner : {block.datas[0]}")
-        print(f"Tel : {block.datas[1]}")
-        print(f"Address : {block.datas[2]}")
-        print(f"Title Deed : {block.datas[3]}")
-        print(f"Area : {block.datas[4]}")
-        print(f"Unit : {block.datas[5]}")
-        print(f"Permis de construire : {block.datas[6]}")
-        print(f"EIA : {block.datas[7]}")
-        print("*************************************************")
-        
+        print("{")
+        print(f"    Block : {block_number},")
+        print(f"    Hash : {block.hash},")
+        print(f"    Previous Hash : {block.previous_hash},")
+        print(f"    TimeStamp : {block.TimeStamp},")
+        print(f"    Property Owner : {block.datas[0]},")
+        print(f"    Tel : {block.datas[1]},")
+        print(f"    Address : {block.datas[2]},")
+        print(f"    Title Deed : {block.datas[3]},")
+        print(f"    Area : {block.datas[4]},")
+        print(f"    Unit : {block.datas[5]},")
+        print(f"    Permis de construire : {block.datas[6]},")
+        print(f"    EIA : {block.datas[7]}")
+        print("}")
+
     def add_block(self, datas):
         previous_hash = self.chain[-1].hash
         new_block = Structure(datas, previous_hash)
@@ -52,31 +53,31 @@ class Blockchain:
     def add_datas(self):
         datas = []
         print("*************************************************")
-        
+
         Property_Owner = input("Property Owner : ")
         datas.append(Property_Owner)
-        
+
         Tel = input("Tel : ")
         datas.append(Tel)
-        
-        Address = int(input("Address : "))
+
+        Address = input("Address : ")
         datas.append(Address)
-        
+
         Title_Deed = int(input("Title Deed : "))
         datas.append(Title_Deed)
-        
-        Area = input("Area (Square Metre) : ")
+
+        Area = float(input("Area (Square Metre) : "))
         datas.append(Area)
-        
-        Unit = float(input("Unit : "))
+
+        Unit = int(input("Unit : "))
         datas.append(Unit)
-        
+
         permis_de_construire = input("permis De Construire : ")
         datas.append(permis_de_construire)
-        
+
         Eia = input("EIA : ")
         datas.append(Eia)
-        
+
         print("*************************************************")
         self.add_block(datas)
 
