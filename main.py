@@ -1,4 +1,4 @@
-from Block import *
+from Structure import *
 from BlockChain import *
 
 while True:

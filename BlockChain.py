@@ -1,5 +1,5 @@
 from inspect import BlockFinder
-from Block import *
+from Structure import *
 import datetime
 
 
