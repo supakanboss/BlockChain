@@ -11,11 +11,22 @@ class Blockchain:
     def __init__(self):
         self.chain = [self.create_genesis_block()]
 
-    def add_block(self, datas):
-        previous_hash = self.chain[-1].hash
-        new_block = Structure(datas, previous_hash)
-        self.chain.append(new_block)
-
+    def display_all_chain(self):
+        for i, block in enumerate(self.chain):
+            print("*************************************************")
+            print(f"Block : {i}")
+            print(f"Hash : {block.hash}")
+            print(f"Previous Hash : {block.previous_hash}")
+            print(f"TimeStamp : {block.TimeStamp}")
+            print(f"Property Owner : {block.datas[0]}")
+            print(f"Tel : {block.datas[1]}")
+            print(f"Address : {block.datas[2]}")
+            print(f"Title Deed : {block.datas[3]}")
+            print(f"Area : {block.datas[4]}")
+            print(f"Unit : {block.datas[5]}")
+            print(f"Permis de construire : {block.datas[6]}")
+            print(f"EIA : {block.datas[7]}")
+            
     def display_chain(self, block_number):
         block = self.chain[block_number]
         print("*************************************************")
@@ -32,22 +43,11 @@ class Blockchain:
         print(f"Permis de construire : {block.datas[6]}")
         print(f"EIA : {block.datas[7]}")
         print("*************************************************")
-
-    def display_all_chain(self):
-        for i, block in enumerate(self.chain):
-            print("*************************************************")
-            print(f"Block : {i}")
-            print(f"Hash : {block.hash}")
-            print(f"Previous Hash : {block.previous_hash}")
-            print(f"TimeStamp : {block.TimeStamp}")
-            print(f"Property Owner : {block.datas[0]}")
-            print(f"Tel : {block.datas[1]}")
-            print(f"Address : {block.datas[2]}")
-            print(f"Title Deed : {block.datas[3]}")
-            print(f"Area : {block.datas[4]}")
-            print(f"Unit : {block.datas[5]}")
-            print(f"Permis de construire : {block.datas[6]}")
-            print(f"EIA : {block.datas[7]}")
+        
+    def add_block(self, datas):
+        previous_hash = self.chain[-1].hash
+        new_block = Structure(datas, previous_hash)
+        self.chain.append(new_block)
 
     def add_datas(self):
         datas = []
